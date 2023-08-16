@@ -524,5 +524,30 @@ freewilly_2 = [
 ]
 configs.extend(freewilly_2)
 
+##########################
+# togethercomputer llama_2_7b_32k
+##########################
+llama_2_7b_32k = [
+    # https://huggingface.co/togethercomputer/LLaMA-2-7B-32K/blob/main/config.json
+    dict(
+        org="togethercomputer",
+        name="LLaMA-2-7B-32K",
+        block_size=4096,
+        vocab_size=32000,
+        padding_multiple=32,
+        n_layer=32,
+        n_head=32,
+        n_embd=4096,
+        rotary_percentage=1.0,
+        parallel_residual=False,
+        bias=False,
+        _norm_class="RMSNorm",
+        norm_eps=1e-5,
+        _mlp_class="LLaMAMLP",
+        intermediate_size=11008,
+    )
+]
+configs.extend(llama_2_7b_32k)
+
 
 name_to_config = {config["name"]: config for config in configs}
